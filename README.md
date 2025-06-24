@@ -37,8 +37,7 @@ Download and install the latest LTS version from: [https://nodejs.org/](https://
 ### 2. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/magento-playwright-tests.git
-cd magento-playwright-tests
+git clone https://github.com/Shtrik-it/luma-case-study.git
 ```
 
 ### 3. Install dependencies
@@ -47,7 +46,7 @@ cd magento-playwright-tests
 npm install
 ```
 
-This will install:
+This should install:
 
 - `@playwright/test`
 - `dotenv`
@@ -93,7 +92,7 @@ npx playwright test src/tests/ShoppingCart.test.ts
 
 - Configuration is defined in `playwright.config.ts`.
 - Stored sessions are saved in `src/utils/storage/` per user type.
-- Credentials are loaded securely via `.env` using the `dotenv` package (as a demonstration).
+- Credentials are loaded via `.env` using the `dotenv` package (as a demonstration).
 
 ---
 
