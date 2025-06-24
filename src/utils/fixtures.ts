@@ -19,7 +19,7 @@ export const test = base.extend<MyFixtures>({
     );
 
     const userType = matchedRole ? userRoleMap[matchedRole] : UserType.NO_USER;
-    console.log(`🔑 Setting up session for: ${userType}`);
+    console.log(`Setting up session for: ${userType}`);
 
     const context = await SessionManager.setupSession(userType);
     const pages = context.pages();

@@ -48,7 +48,6 @@ export class LoginPage extends BasePage {
       return false;
     }
   }
-  
 
   public async acceptCookiesIfAppear(){
     if (await this.buttonAgreePrivacy.isVisible({ timeout: 2000 }).catch(() => false)) {

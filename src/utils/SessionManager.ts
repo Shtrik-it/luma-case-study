@@ -18,11 +18,11 @@ export class SessionManager {
       const isValid = await this.validateSession(context, userType, username);
 
       if (isValid) {
-        console.log(`✅ Reused valid session for ${userType}`);
+        console.log(`Reused valid session for ${userType}`);
         return context;
       }
 
-      console.warn(`⚠️ Invalid session — deleting and re-logging in.`);
+      console.warn(`Invalid session — deleting and re-logging in.`);
       fs.unlinkSync(sessionPath);
       await context.close();
     }
@@ -56,14 +56,14 @@ export class SessionManager {
     await loginPage.login(email, password, username);
 
     await this.saveSession(context, userType);
-    console.log(`🔐 New session created and saved for ${userType}`);
+    console.log(`New session created and saved for ${userType}`);
     return context;
   }
 
   private static async saveSession(context: BrowserContext, userType: UserType): Promise<void> {
     const sessionFilePath = this.getSessionFilePath(userType);
     await context.storageState({ path: sessionFilePath });
-    console.log(`💾 Session saved: ${sessionFilePath}`);
+    console.log(`Session saved: ${sessionFilePath}`);
   }
 
   private static getSessionFilePath(userType: UserType): string {

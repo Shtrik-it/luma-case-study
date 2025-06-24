@@ -43,40 +43,4 @@ export abstract class BasePage {
     await element.hover();
     console.debug(`Hovered over element: ${element}`)
   }
-
-  async fillUsingJS(selector: string, inputValue: string) {
-    const locator = this.page.locator(selector);
-    await locator.waitFor();
-  
-    await locator.evaluate((el, value) => {
-      (el as HTMLInputElement).value = value;
-      el.dispatchEvent(new Event('input', { bubbles: true }));
-      el.dispatchEvent(new Event('change', { bubbles: true }));
-    }, inputValue);
-  
-    console.debug(`Filled input field '${selector}' with value (via JS): '${inputValue}'`);
-  }
-
-  async isVisible(selector: string): Promise<boolean> {
-    try {
-      await this.page.waitForTimeout(1000); // TODO: Refactor when possible
-      return await this.page.locator(selector).isVisible();
-    } catch (e) {
-        console.error('Element is not visible by selector: ' + {selector} + 'Error: ' + e)
-      return false;
-    }
-  }
-
-  async getText(element: Locator) {
-    await element.waitFor();
-    return await element.innerText();
-  }
-
-  async waitToDisappear(selector: string): Promise<void> {
-    await this.page.waitForSelector(selector, { state: "detached", timeout: 15000 });
-  }
-
-  async waitToAppear(selector: string): Promise<void> {
-    await this.page.waitForSelector(selector, { state: "attached", timeout: 15000 });
-  }
 }

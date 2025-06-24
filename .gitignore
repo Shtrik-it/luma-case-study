@@ -6,4 +6,3 @@ test-results
 # Project-specific
 src/utils/storage/*
 !src/utils/storage/.gitkeep
-.env
