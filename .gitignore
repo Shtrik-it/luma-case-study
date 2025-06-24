@@ -1,0 +1,9 @@
+# PLaywright & Typescript
+node_modules 
+playwright-report
+test-results
+
+# Project-specific
+src/utils/storage/*
+!src/utils/storage/.gitkeep
+.env
