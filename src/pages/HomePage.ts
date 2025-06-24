@@ -18,7 +18,7 @@ export class HomePage extends BasePage {
     this.linksSearchResult = page.locator("//div[contains(@class,'products-grid')]//a[@class='product-item-link']");
     this.textSearchedTerm = page.locator("//h1[@class='page-title']");
     this.textWarningMessage = page.locator("//div[@class='message notice']/div");
-    this.textSuccessMessage = page.locator("//div[contains(@data-bind,'message.text')]");
+    this.textSuccessMessage = page.locator("//div[@data-ui-id='message-success']");
     this.linkShoppingCart = page.locator("text=shopping cart");
   }
 
