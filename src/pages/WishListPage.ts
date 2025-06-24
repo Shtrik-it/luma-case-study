@@ -15,7 +15,7 @@ export class WishListPage extends BasePage {
   //--------------------------------- ACTIONS ---------------------------------//
 
   getProductByTitle(productTitle: string): Locator{
-    return this.page.locator(`//a[contains(text(),'${productTitle}')]`);
+    return this.page.locator(`//a[contains(text(),'${productTitle}') and @title='${productTitle}']`);
   }
 
   async removeProductFromWishList(productName: string) {

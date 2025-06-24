@@ -5,7 +5,7 @@ test("Customer can search for a product and get related results", async ({pages}
 
     const searchTerm = 'watch';
     await homePage.searchProducts(searchTerm);
-    await homePage.searchResultsContainKeyword(searchTerm); //Make sure this is boolean
+    await homePage.searchResultsContainKeyword(searchTerm);
 });
 
 test("Customer can search by SKU code and get the correct result", async ({pages}) => {

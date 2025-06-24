@@ -11,7 +11,7 @@ export class SessionManager {
     const browser = await chromium.launch({ headless: process.env.CI ? true : false });
 
     if (fs.existsSync(sessionPath)) {
-      console.log(`🔄 Trying to reuse session for ${userType}`);
+      console.log(`Trying to reuse session for ${userType}`);
       const context = await browser.newContext({ storageState: sessionPath });
 
       const { username } = userCredentials[userType];
